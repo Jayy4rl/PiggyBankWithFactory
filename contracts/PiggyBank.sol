@@ -95,8 +95,8 @@ contract PiggyBank is Ipiggy {
                         "Invalid token address"
                     );
                     IERC20 token = IERC20(_tokenAddress);
-                    token.transfer(msg.sender, payoutAmount);
                     account.balance -= payoutAmount;
+                    token.transfer(msg.sender, payoutAmount);
                 }
             }
         } else {
@@ -111,8 +111,8 @@ contract PiggyBank is Ipiggy {
                     );
                     require(_amount > 0, "Invalid amount");
                     IERC20 token = IERC20(_tokenAddress);
-                    token.transfer(msg.sender, _amount);
                     account.balance -= _amount;
+                    token.transfer(msg.sender, _amount);
                 }
             }
         }
